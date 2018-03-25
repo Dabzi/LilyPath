@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{796CB593-6150-6874-2E57-696E646F7773}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LilyPath</RootNamespace>
+    <AssemblyName>LilyPath</AssemblyName>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn></NoWarn>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <OutputPath>bin\WindowsGL\AnyCPU\Debug</OutputPath>
+    <IntermediateOutputPath>obj\WindowsGL\AnyCPU\Debug</IntermediateOutputPath>
+    <DocumentationFile>bin\WindowsGL\AnyCPU\Debug\LilyPath.xml</DocumentationFile>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <OutputPath>bin\WindowsGL\AnyCPU\Release</OutputPath>
+    <IntermediateOutputPath>obj\WindowsGL\AnyCPU\Release</IntermediateOutputPath>
+    <DocumentationFile>bin\WindowsGL\AnyCPU\Release\LilyPath.xml</DocumentationFile>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LilyPath\Brush.cs" />
+    <Compile Include="LilyPath\Brushes\CheckerBrush.cs" />
+    <Compile Include="LilyPath\DrawBatch.cs" />
+    <Compile Include="LilyPath\DrawCache.cs" />
+    <Compile Include="LilyPath\Enums.cs" />
+    <Compile Include="LilyPath\GraphicsPath.cs" />
+    <Compile Include="LilyPath\LineCapInfo.cs" />
+    <Compile Include="LilyPath\PathBuilder.cs" />
+    <Compile Include="LilyPath\Pen.cs" />
+    <Compile Include="LilyPath\Pens\GradientPen.cs" />
+    <Compile Include="LilyPath\Pens\PathGradientPen.cs" />
+    <Compile Include="LilyPath\Properties\AssemblyInfo.cs" />
+    <Compile Include="LilyPath\Properties\AssemblyInfo.WP8.cs" />
+    <Compile Include="LilyPath\Shapes\Grid.cs" />
+    <Compile Include="LilyPath\SolidColorBrush.cs" />
+    <Compile Include="LilyPath\TextureBrush.cs" />
+    <Compile Include="LilyPath\Triangulator.cs" />
+    <Compile Include="LilyPath\Utility\Buffer.cs" />
+    <Compile Include="LilyPath\Utility\PenWorkspace.cs" />
+    <Compile Include="LilyPath\Utility\Pool.cs" />
+    <Compile Include="LilyPath\Utility\Pools.cs" />
+    <Compile Include="LilyPath\Utility\ZeroList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LilyPath\obj\Debug\LilyPath.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LilyPath\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="LilyPath\obj\Debug\LilyPath.csprojResolveAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <_PostBuildHookTimestamp>@(IntermediateAssembly-&gt;'%(FullPath).timestamp')</_PostBuildHookTimestamp>
+    <_PostBuildHookHostPlatform>$(Platform)</_PostBuildHookHostPlatform>
+  </PropertyGroup>
+  <Target Name="PostBuildHooks" Inputs="@(IntermediateAssembly);@(ReferencePath)" Outputs="@(IntermediateAssembly);$(_PostBuildHookTimestamp)" AfterTargets="CoreCompile" BeforeTargets="AfterCompile">
+    <Touch Files="$(_PostBuildHookTimestamp)" AlwaysCreate="True" />
+  </Target>
+  <ItemGroup>
+    <ProjectReference Include="..\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
+      <Project>{6D75E618-19CA-4C51-9546-F10965FBC0B8}</Project>
+      <Name>MonoGame.Framework.WindowsGL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+</Project>
